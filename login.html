@@ -1,0 +1,46 @@
+
+
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function validateForm ()
+            {
+      var password=document.getElementById("password").value;
+      var email=document.getElementById("email").value;
+      if(password =="" )
+      {
+          alert("Password filed should not be empty");
+          return false;
+      }
+      if( email=="")
+      {
+          alert("Email filed should not be empty");
+          return false;
+      }
+      var filter = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+if(filter.test(email) == false) {
+   alert('Invalid Email Address');
+   return false;
+}
+
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm" action ="ValidateLogin.php" onsubmit="return validateForm () " method="post">
+       <div><label>Email: </label><input type="email" id="email" name="email" ></div> 
+       <div> <label>Password:</label> <input type="password" id="password" name="password" ></div>
+       
+       
+        <input type="submit" value="login">
+<div class="signup_link "><a href="welcome.html" >Sign Up</a></div>   
+    </form>
+
+
+   
+
+    </body>
+</html>

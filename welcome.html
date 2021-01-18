@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function validateForm ()
+            {
+      var password=document.getElementById("Password").value;
+      var conpassword=document.getElementById("ConfirmPassword").value;
+      var email=document.getElementById("email").value;
+      var name=document.getElementById("name").value;
+      if(password =="" )
+      {
+          alert("Password should not be empty");
+          return false;
+      }
+      if( email=="")
+      {
+          alert("Email  should not be empty");
+          return false;
+      }
+      if(name=="")
+      {
+        alert("Name  should not be empty");
+          return false;
+      }if(conpassword==""){
+      alert("Confirm Password should not be empty");
+          return false;}
+      if(password!=conpassword)
+      {
+          alert("Password should match Confirm Password")
+          return false;
+      }
+      var filter = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+if(filter.test(email) == false) {
+   alert('Invalid Email Address');
+   return false;
+}
+
+            }
+
+
+    
+        </script>
+    </head>
+    <body>
+        <form name="myForm" action ="Register.php" onsubmit="return validateForm () " method="post">
+       <div> Name: <input type="text" id="name" name="name" >
+    </div>
+    <div> Email: <input type="email" id="email" name="email" ></div>
+    <div>Password: <input type="password" id="Password" name="Password"  ></div>
+       <div>ConfirmPassword: <input type="password" id="ConfirmPassword" name="ConfirmPassword"  ></div>
+        
+        <div><input type="submit" value="submit"></div>
+        <a href="login.html" >Sign in</a>
+    </form>
+    </body>
+</html>
